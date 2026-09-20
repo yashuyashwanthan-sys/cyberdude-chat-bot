@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CyberDude Networks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Mock "company website" backdrop, so the widget has real context ===== -->
+  <div class="site">
+    <nav class="site-nav">
+      <div class="site-logo">
+        <span class="logo-mark">CDN</span>
+        <span class="logo-word">CYBERDUDE<span class="logo-dot">...</span></span>
+      </div>
+      <div class="site-links">
+        <span>About</span>
+        <span>Solutions</span>
+        <span>Work</span>
+        <span>Careers</span>
+        <span class="site-cta">Contact Us</span>
+      </div>
+    </nav>
+
+    <header class="site-hero">
+      <span class="eyebrow">SMART SAAS &amp; AI</span>
+      <h1>Beyond Chatbots.<br/>True AI Platforms.</h1>
+      <p>We build custom SaaS platforms and private AI tools that solve actual
+        business bottlenecks — secure, practical, and built to protect your
+        company's private data.</p>
+      <div class="hero-stats">
+        <div><strong>4x</strong><span>Award Winning</span></div>
+        <div><strong>500+</strong><span>Deployments</span></div>
+        <div><strong>10+ Yrs</strong><span>Shipped Code</span></div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ===== Chat launcher button ===== -->
+  <button id="launcher" class="launcher" aria-label="Open chat">
+    <svg class="ic-chat" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H7l-3 3V4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <svg class="ic-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <span class="launcher-badge">1</span>
+  </button>
+
+  <!-- ===== Chat widget panel ===== -->
+  <section id="panel" class="panel" aria-live="polite">
+    <header class="panel-header">
+      <div class="panel-id">
+        <span class="avatar">CDD</span>
+        <div class="panel-id-text">
+          <strong>Cyber Dude Duty</strong>
+          <span class="status"><i class="dot"></i>Online · CyberDude Networks</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="agentBtn" class="icon-btn" aria-label="Connect with agent">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-1v-6h3M4 17v-4h3v6H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="maximizeBtn" class="icon-btn" aria-label="Maximize chat">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="minimize" class="icon-btn" aria-label="Minimize">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="log" class="log"></div>
+
+    <div id="suggestions" class="suggestions"></div>
+
+    <form id="composer" class="composer">
+      <input id="input" type="text" placeholder="Ask about services, pricing, careers…" autocomplete="off" />
+      <button type="button" id="micBtn" class="mic-btn" aria-label="Speak your question">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 003-3V6a3 3 0 10-6 0v6a3 3 0 003 3z" stroke="currentColor" stroke-width="1.7"/><path d="M19 11a7 7 0 01-14 0M12 18v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <button type="submit" class="send-btn" aria-label="Send">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12l16-8-6 8 6 8-16-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+    <div class="composer-foot" id="composerFoot">No AI API · Runs 100% locally on our own logic</div>
+
+    <!-- ===== Connect with Agent modal — local contact info only, no network calls ===== -->
+    <div id="agentModal" class="agent-modal">
+      <div class="agent-modal-card">
+        <button id="agentModalClose" class="icon-btn agent-modal-close" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <h3>Connect with an Agent</h3>
+        <p>Reach our team directly — no bot needed.</p>
+        <a class="agent-contact" href="tel:+918939738801">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0v4a2 2 0 01-2 2h-1v-6h3M4 17v-4h3v6H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.6"/></svg>
+          +91 89397 38801
+        </a>
+        <a class="agent-contact" href="mailto:hello@cyberdudenetworks.com">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6"/></svg>
+          hello@cyberdudenetworks.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
