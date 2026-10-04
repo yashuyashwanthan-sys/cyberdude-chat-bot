@@ -19,9 +19,10 @@ An intelligent full-stack AI chatbot application featuring a responsive conversa
 - Node.js (v18+)
 - MongoDB running locally or a MongoDB Atlas URI                                                                  
 ### Installation
+
 1. **Clone the repository:**
    ```bash
-git clone(https://github.com/yashuyashwanthan-sys/cyberdude-chat-bot.git)
+ git clone [https://github.com/yashuyashwanthan-sys/cyberdude-chat-bot.git](https://github.com/yashuyashwanthan-sys/cyberdude-chat-bot.git)
    cd cyberdude-chat-bot
    
  Install dependencies:
